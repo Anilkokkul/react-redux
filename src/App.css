@@ -78,9 +78,10 @@ th {
 .cart span {
   background-color: black;
   display: inline-block;
-  line-height: 1.2;
+  line-height: 1.1;
   min-width: 35px;
   height: 35px;
+  color: white;
   border-radius: 50%;
 }
 .decrement {
@@ -120,4 +121,36 @@ th {
 }
 .card p {
   height: 65px;
+}
+@media (max-width: 600px) {
+  .cart {
+    height: 10px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+  .cart span {
+    background-color: black;
+    min-width: 15px;
+    height: 15px;
+    border-radius: 50%;
+  }
+  .cart img {
+    width: 10px;
+    height: 10px;
+  }
+  .cart a {
+  }
+  .card {
+    width: 70vw;
+  }
+  .card img {
+    width: 100%;
+    object-fit: contain;
+  }
+  .table {
+    width: 90%;
+  }
+  .home .shop {
+    font-size: 20px;
+  }
 }

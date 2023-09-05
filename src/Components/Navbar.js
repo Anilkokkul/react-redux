@@ -28,8 +28,9 @@ const Navbar = () => {
       <div className="cart">
         <img src={cart} alt="cart"></img>
         <Link to={"/cart"} onClick={() => setHome(!home)}>
-          Cart <span>{cartItems.length}</span>
+          Cart
         </Link>
+        <span>{cartItems.length}</span>
       </div>
     </div>
   );
