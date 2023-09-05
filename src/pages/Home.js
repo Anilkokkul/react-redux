@@ -21,11 +21,9 @@ function Home() {
         ? localStorage.getItem("productIds")
         : "[]"
     );
-    console.log(ids);
     let newIds = ids.filter((id) => {
       return cartItems.some((key) => key.id === id);
     });
-    console.log(ids);
     localStorage.setItem("productIds", JSON.stringify(newIds));
   });
 
