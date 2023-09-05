@@ -15,19 +15,19 @@ function Home() {
       .catch((error) => console.log(error));
   }, []);
 
-  // useEffect(() => {
-  //   let ids = JSON.parse(
-  //     localStorage.getItem("productIds")
-  //       ? localStorage.getItem("productIds")
-  //       : []
-  //   );
-  //   console.log(ids);
-  //   let newIds = ids.filter((id) => {
-  //     return cartItems.some((key) => key.id === id);
-  //   });
-  //   console.log(ids);
-  //   localStorage.setItem("productIds", JSON.stringify(newIds));
-  // });
+  useEffect(() => {
+    let ids = JSON.parse(
+      localStorage.getItem("productIds")
+        ? localStorage.getItem("productIds")
+        : [5, 6]
+    );
+    console.log(ids);
+    let newIds = ids.filter((id) => {
+      return cartItems.some((key) => key.id === id);
+    });
+    console.log(ids);
+    localStorage.setItem("productIds", JSON.stringify(newIds));
+  });
 
   const handleAddToCart = (data) => {
     let ids = JSON.parse(
