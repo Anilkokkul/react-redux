@@ -7,6 +7,7 @@ function Home() {
   const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cartItems);
+
   useEffect(() => {
     fetch("../Products/products.json")
       .then((response) => response.json())
@@ -15,10 +16,13 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    let ids = JSON.parse(localStorage.getItem("productIds"));
+    let ids = [];
+    ids = JSON.parse(localStorage.getItem("productIds"));
+    console.log(ids);
     let newIds = ids.filter((id) => {
       return cartItems.some((key) => key.id === id);
     });
+    console.log(ids);
     localStorage.setItem("productIds", JSON.stringify(newIds));
   });
 
@@ -45,6 +49,7 @@ function Home() {
   };
   return (
     <>
+      <div>Home</div>
       <div className="productsContainer">
         {products &&
           products.map((product, index) => {
