@@ -16,8 +16,11 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    let ids = [];
-    ids = JSON.parse(localStorage.getItem("productIds"));
+    let ids = JSON.parse(
+      localStorage.getItem("productIds")
+        ? localStorage.getItem("productIds")
+        : []
+    );
     console.log(ids);
     let newIds = ids.filter((id) => {
       return cartItems.some((key) => key.id === id);
